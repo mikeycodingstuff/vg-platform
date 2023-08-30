@@ -1,16 +1,25 @@
 <template>
   <div>
     <h1>List of Games</h1>
-    <ul>
-      <li v-for="game in games" :key="game.id">
-          {{ game.name }}
-          {{ game.release_date }}
-          {{ game.developer }}
-      </li>
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Release Date</th>
+          <th>Developer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="game in games" :key="game.id">
+          <td>{{ game.name }}</td>
+          <td>{{ game.release_date }}</td>
+          <td>{{ game.developer }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
-  
+
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import type { Game } from '@/types/types';
