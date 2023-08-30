@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\GameResource;
 use App\Models\Game;
 use Illuminate\Http\Request;
 
@@ -12,11 +13,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = Game::all();
-
-        return response()->json([
-            'data' => $games,
-        ]);
+        return GameResource::collection(Game::all());
     }
 
     /**
@@ -40,7 +37,7 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        //
+        return new GameResource($game);
     }
 
     /**
