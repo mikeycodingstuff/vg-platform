@@ -18,9 +18,9 @@ class GameFactory extends Factory
     {
         return [
             'name' => fake()->words(random_int(1, 3), true),
-            'release_date' => fake()->date(),
-            'developer' => fake()->company(),
-            'description' => fake()->paragraph(),
+            'release_date' => fake()->boolean(90) ? fake()->date() : null,
+            'developer' => fake()->boolean(90) ? fake()->company() : null,
+            'description' => fake()->boolean(60) ? fake()->paragraph() : null,
         ];
     }
 }
