@@ -35,7 +35,7 @@ onMounted(() => {
 
 const fetchGames = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/api/games`);
+    const response = await fetch(`${BASE_URL}/games`);
     const data: { data: Game[] } = await response.json();
     games.value = data.data;
     loading.value = false;
