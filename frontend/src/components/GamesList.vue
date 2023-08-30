@@ -1,10 +1,14 @@
 <template>
-	<div>
-		<h2>List of Games</h2>
-		<ul>
-			<li v-for="game in games" :key="game.id">{{ game.name }}</li>
-		</ul>
-	</div>
+  <div>
+    <h1>List of Games</h1>
+    <ul>
+      <li v-for="game in games" :key="game.id">
+          {{ game.name }}
+          {{ game.release_date }}
+          {{ game.developer }}
+      </li>
+    </ul>
+  </div>
 </template>
   
 <script setup lang="ts">
