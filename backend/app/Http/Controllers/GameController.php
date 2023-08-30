@@ -12,7 +12,11 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        $games = Game::all();
+
+        return response()->json([
+            'data' => $games
+        ]);
     }
 
     /**
