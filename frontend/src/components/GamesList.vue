@@ -17,6 +17,7 @@
         </tr>
       </tbody>
     </table>
+    <p v-if="loading">Loading...</p>
   </div>
 </template>
 
@@ -25,6 +26,7 @@ import { ref, onMounted } from 'vue';
 import type { Game } from '@/types/types';
 
 const games = ref<Game[]>([]);
+const loading = ref(true);
 const BASE_URL = import.meta.env.VITE_API_ENDPOINT;
 
 onMounted(() => {
@@ -36,10 +38,10 @@ const fetchGames = async () => {
     const response = await fetch(`${BASE_URL}/api/games`);
     const data: { data: Game[] } = await response.json();
     games.value = data.data;
+    loading.value = false;
   } catch (error) {
     console.error('Error fetching games:', error);
+    loading.value = false;
   }
 };
 </script>
-
-  
