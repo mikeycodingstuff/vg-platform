@@ -19,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('games', GameController::class)
-    ->only(['index']);
+Route::apiResource('games', GameController::class)
+    ->only(['index', 'show']);
