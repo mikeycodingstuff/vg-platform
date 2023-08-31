@@ -16,7 +16,7 @@ describe('index route', function () {
     it('can fetch all games', function () {
         $games = Game::factory()->count(50)->create();
 
-        $response = $this->get('/games');
+        $response = $this->get('games');
 
         $response->assertStatus(200)->assertJson($games->toArray());
     });
@@ -26,14 +26,14 @@ describe('show route', function () {
     it('can fetch a game', function () {
         $game = Game::factory()->create();
 
-        $response = $this->get("/games/$game->id");
+        $response = $this->get("games/$game->id");
 
         $response->assertStatus(200)->assertJson($game->toArray());
     });
 
     it('returns a 404 for a nonexistent game', function () {
 
-        $response = $this->get('/games/1');
+        $response = $this->get('games/1');
 
         $response->assertStatus(404);
     });
@@ -48,8 +48,38 @@ describe('store route', function () {
             'description' => 'A new game description.',
         ];
 
-        $response = $this->post('/games', $data);
+        $response = $this->post('games', $data);
 
         $response->assertStatus(201)->assertJson($data);
+    });
+});
+
+describe('update route', function () {
+    it('can update a game', function () {
+        $game = Game::factory()->create();
+
+        $updatedData = [
+            'name' => 'Updated Game Name',
+            'release_date' => '2023-02-01',
+            'developer' => 'Updated Developer',
+            'description' => 'Updated game description.',
+        ];
+
+        $response = $this->put("games/$game->id", $updatedData);
+
+        $response->assertStatus(200)->assertJson($updatedData);
+    });
+
+    it('returns a 404 for updating a nonexistent game', function () {
+        $updatedData = [
+            'name' => 'Updated Game Name',
+            'release_date' => '2023-02-01',
+            'developer' => 'Updated Developer',
+            'description' => 'Updated game description.',
+        ];
+
+        $response = $this->put('games/1', $updatedData);
+
+        $response->assertStatus(404);
     });
 });
