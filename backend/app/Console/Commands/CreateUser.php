@@ -59,7 +59,6 @@ class CreateUser extends Command
      * Formats the given text for a pretty console output.
      *
      * @param  string  $quote
-     * @return string
      */
     protected static function formatForConsole(User $user, string $token): string
     {
@@ -72,13 +71,10 @@ class CreateUser extends Command
 
     /**
      * Formats the given errors for a console output.
-     *
-     * @param MessageBag $errors
-     * @return string
      */
     protected static function formatErrorsForConsole(MessageBag $errors): string
     {
-        $errorMessages = "";
+        $errorMessages = '';
 
         foreach ($errors->all() as $message) {
             $errorMessages .= "\n  <fg=red>- $message</>";
