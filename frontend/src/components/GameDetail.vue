@@ -7,7 +7,6 @@
   </div>
 </template>
 
-
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { Game } from '@/types/types';
@@ -17,5 +16,4 @@ const props = defineProps<{
 }>();
 
 const game = ref(props.game);
-
 </script>
