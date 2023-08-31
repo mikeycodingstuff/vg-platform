@@ -36,8 +36,9 @@ onMounted(() => {
 const fetchGames = async () => {
   try {
     const response = await fetch(`${BASE_URL}/games`);
-    const data: { data: Game[] } = await response.json();
-    games.value = data.data;
+    console.log(`${BASE_URL}/games`)
+    const data: Game[] = await response.json();
+    games.value = data;
     loading.value = false;
   } catch (error) {
     console.error('Error fetching games:', error);

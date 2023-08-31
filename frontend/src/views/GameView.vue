@@ -28,8 +28,8 @@ onMounted(() => {
 async function fetchGameById(id: number): Promise<void> {
   try {
     const response = await fetch(`${BASE_URL}/games/${id}`);
-    const data: { data: Game } = await response.json();
-    game.value = data.data;
+    const data: Game = await response.json();
+    game.value = data;
     loading.value = false;
   } catch (error) {
     console.error('Error fetching game:', error);
