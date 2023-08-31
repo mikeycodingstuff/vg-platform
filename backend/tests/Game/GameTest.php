@@ -31,7 +31,7 @@ describe('show route', function () {
         $response->assertStatus(200)->assertJson($game->toArray());
     });
 
-    it('returns a 404 for a nonexistent game', function () {
+    it('returns a 404 for trying to show a nonexistent game', function () {
 
         $response = $this->get('games/1');
 
@@ -70,7 +70,7 @@ describe('update route', function () {
         $response->assertStatus(200)->assertJson($updatedData);
     });
 
-    it('returns a 404 for updating a nonexistent game', function () {
+    it('returns a 404 for trying to update a nonexistent game', function () {
         $updatedData = [
             'name' => 'Updated Game Name',
             'release_date' => '2023-02-01',
@@ -79,6 +79,23 @@ describe('update route', function () {
         ];
 
         $response = $this->put('games/1', $updatedData);
+
+        $response->assertStatus(404);
+    });
+});
+
+describe('delete route', function () {
+    it('can delete a game', function () {
+        $game = Game::factory()->create();
+
+        $response = $this->delete("/games/$game->id");
+
+        $response->assertStatus(200);
+        $this->assertSoftDeleted('games', ['id' => $game->id]);
+    });
+
+    it('returns a 404 for trying to delete a nonexistent game', function () {
+        $response = $this->delete('/games/1');
 
         $response->assertStatus(404);
     });
