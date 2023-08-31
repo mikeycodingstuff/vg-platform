@@ -62,7 +62,16 @@ class GameController extends Controller
      */
     public function update(Request $request, Game $game)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|unique:games|string|max:255',
+            'release_date' => 'nullable|date',
+            'developer' => 'nullable|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
+        $game->update($validated);
+
+        return new GameResource($game);
     }
 
     /**

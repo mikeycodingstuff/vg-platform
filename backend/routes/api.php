@@ -21,5 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('games', GameController::class)
-        ->only(['index', 'show', 'store']);
+        ->only(['index', 'show', 'store', 'update']);
 });
