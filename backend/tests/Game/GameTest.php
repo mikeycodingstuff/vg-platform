@@ -1,9 +1,8 @@
 <?php
 
 use App\Models\Game;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
-uses(RefreshDatabase::class);
+uses()->group('game');
 
 describe('index route', function () {
     it('can fetch all games', function () {
@@ -27,5 +26,20 @@ describe('show route', function () {
     it('returns a 404 for a nonexistent game', function () {
         $response = $this->get('/games/1');
         $response->assertStatus(404);
+    });
+});
+
+describe('create route', function () {
+    it('can create a new game', function () {
+        $data = [
+            'name' => 'New Game',
+            'release_date' => '2023-01-01',
+            'developer' => 'New Developer',
+            'description' => 'A new game description.',
+        ];
+    
+        $response = $this->post('/games', $data);
+    
+        $response->assertStatus(201)->assertJson($data);
     });
 });
