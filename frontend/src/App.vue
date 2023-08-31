@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <games-list></games-list>
+    <router-view></router-view>
   </div>
 </template>
-
-<script setup lang="ts">
-import GamesList from './components/GamesList.vue';
-</script>
