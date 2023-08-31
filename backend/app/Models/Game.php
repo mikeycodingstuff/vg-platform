@@ -16,4 +16,11 @@ class Game extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    protected $fillable = [
+        'name',
+        'release_date',
+        'developer',
+        'description',
+    ];
 }
