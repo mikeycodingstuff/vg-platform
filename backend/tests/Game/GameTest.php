@@ -29,7 +29,7 @@ describe('show route', function () {
     });
 });
 
-describe('create route', function () {
+describe('store route', function () {
     it('can create a new game', function () {
         $data = [
             'name' => 'New Game',
