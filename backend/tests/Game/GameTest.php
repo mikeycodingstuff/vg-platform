@@ -1,16 +1,9 @@
 <?php
 
 use App\Models\Game;
-use App\Models\User;
-
-use function Pest\Laravel\actingAs;
+use Tests\Setup;
 
 uses()->group('game');
-
-beforeEach(function () {
-    $user = User::factory()->create();
-    actingAs($user);
-});
 
 describe('index route', function () {
     it('can fetch all games', function () {
@@ -40,6 +33,8 @@ describe('show route', function () {
 });
 
 describe('store route', function () {
+    beforeEach(Setup::createAndActAsUser());
+
     it('can create a new game', function () {
         $data = [
             'name' => 'New Game',
@@ -55,6 +50,8 @@ describe('store route', function () {
 });
 
 describe('update route', function () {
+    beforeEach(Setup::createAndActAsUser());
+
     it('can update a game', function () {
         $game = Game::factory()->create();
 
@@ -85,6 +82,8 @@ describe('update route', function () {
 });
 
 describe('delete route', function () {
+    beforeEach(Setup::createAndActAsUser());
+
     it('can delete a game', function () {
         $game = Game::factory()->create();
 
