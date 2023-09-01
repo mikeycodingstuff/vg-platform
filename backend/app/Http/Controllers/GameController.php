@@ -8,20 +8,17 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum', ['only' => ['store', 'update', 'destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         return GameResource::collection(Game::all());
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -47,14 +44,6 @@ class GameController extends Controller
     public function show(Game $game)
     {
         return new GameResource($game);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Game $game)
-    {
-        //
     }
 
     /**
