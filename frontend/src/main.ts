@@ -10,3 +10,6 @@ const pinia = createPinia();
 app.use(pinia);
 app.use(router);
 app.mount('#app');
+
+// Set the initial data-theme attribute
+document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'defaultTheme');

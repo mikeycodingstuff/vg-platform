@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html[data-theme='defaultTheme'] {
+    --color-primary: blue;
+    --color-background: red;
+    --color-hover: green;
+  }
+
+  html[data-theme='lightTheme'] {
+    --color-primary: skyblue;
+    --color-background: salmon;
+    --color-hover: lightgreen;
+  }
+}
