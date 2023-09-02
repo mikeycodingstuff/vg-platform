@@ -1,15 +1,15 @@
 <template>
   <div class="m-5 flex justify-between">
     <div class="py-2 px-4 m-5 bg-theme-sub-alt rounded-lg">
-      <p class="text-theme-sub font-bold">select theme:</p>
+      <p class="text-theme-sub font-bold">Select theme:</p>
       <select
         @change="changeTheme"
         v-model="themeStore.currentTheme"
         class="bg-theme-bg p-3"
       >
-        <option value="botanical">botanical</option>
-        <option value="rose_pine_dawn">rose pine dawn</option>
-        <option value="moonlight">moonlight</option>
+        <option v-for="theme in themes" :key="theme" :value="theme">
+          {{ theme }}
+        </option>
       </select>
     </div>
     <div class="flex items-center">
@@ -35,4 +35,6 @@ const themeStore = useThemeStore();
 const changeTheme = () => {
   themeStore.setTheme(themeStore.currentTheme);
 };
+
+const themes = ['botanical', 'rose_pine_dawn', 'moonlight'];
 </script>
