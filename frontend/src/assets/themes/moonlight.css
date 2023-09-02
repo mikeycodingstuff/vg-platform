@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .moonlight {
+    --color-main: #c69f68;
+    --color-text: #ccccb5;
+    --color-bg: #191f28;
+    --color-sub: #4b5975;
+    --color-sub-alt: #141a22;
+  }
+}

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .botanical {
+    --color-main: #eaf1f3;
+    --color-text: #eaf1f3;
+    --color-bg: #7b9c98;
+    --color-sub: #495755;
+    --color-sub-alt: #72908d;
+  }
+}

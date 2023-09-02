@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .rose_pine_dawn {
+    --color-main: #56949f;
+    --color-text: #286983;
+    --color-bg: #fffaf3;
+    --color-sub: #c4a7e7;
+    --color-sub-alt: #f0e9df;
+  }
+}

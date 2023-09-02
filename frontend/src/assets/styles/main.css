@@ -1,29 +1,17 @@
+@import '../themes/botanical.css';
+@import '../themes/moonlight.css';
+@import '../themes/rose_pine_dawn.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html[data-theme='botanical'] {
-    --color-main: #eaf1f3;
-    --color-text: #eaf1f3;
-    --color-bg: #7b9c98;
-    --color-sub: #495755;
-    --color-sub-alt: #72908d;
-  }
+:root {
+  --color-main: #e2b714;
+  --color-text: #d1d0c5;
+  --color-bg: #323437;
+  --color-sub: #646669;
+  --color-sub-alt: #2c2e31;
 
-  html[data-theme='rose_pine_dawn'] {
-    --color-main: #56949f;
-    --color-text: #286983;
-    --color-bg: #fffaf3;
-    --color-sub: #c4a7e7;
-    --color-sub-alt: #f0e9df;
-  }
-
-  html[data-theme='moonlight'] {
-    --color-main: #c69f68;
-    --color-text: #ccccb5;
-    --color-bg: #191f28;
-    --color-sub: #4b5975;
-    --color-sub-alt: #141a22;
-  }
+  background-color: var(--color-bg);
 }
