@@ -4,9 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--color-primary)',
+        main: 'var(--color-main)',
+        text: 'var(--color-text)',
         background: 'var(--color-background)',
-        hover: 'var(--color-hover)',
+        sub: 'var(--color-sub)',
+        'sub-alt': 'var(--color-sub-alt)',
       },
     },
   },

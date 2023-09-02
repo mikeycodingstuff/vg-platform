@@ -3,15 +3,19 @@
 @tailwind utilities;
 
 @layer base {
-  html[data-theme='defaultTheme'] {
-    --color-primary: blue;
-    --color-background: red;
-    --color-hover: green;
+  html[data-theme='botanical'] {
+    --color-main: #eaf1f3;
+    --color-text: #eaf1f3;
+    --color-background: #7b9c98;
+    --color-sub: #495755;
+    --color-sub-alt: #72908d;
   }
 
-  html[data-theme='lightTheme'] {
-    --color-primary: skyblue;
-    --color-background: salmon;
-    --color-hover: lightgreen;
+  html[data-theme='rose_pine_dawn'] {
+    --color-main: #56949f;
+    --color-text: #286983;
+    --color-background: #fffaf3;
+    --color-sub: #c4a7e7;
+    --color-sub-alt: #f0e9df;
   }
 }
