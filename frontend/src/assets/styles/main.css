@@ -12,6 +12,9 @@
   --color-bg: #323437;
   --color-sub: #646669;
   --color-sub-alt: #2c2e31;
+}
 
+#app {
   background-color: var(--color-bg);
+  height: 100vh;
 }
