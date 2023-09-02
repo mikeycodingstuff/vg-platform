@@ -12,4 +12,7 @@ app.use(router);
 app.mount('#app');
 
 // Set the initial data-theme attribute
-document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'defaultTheme');
+document.documentElement.setAttribute(
+  'data-theme',
+  localStorage.getItem('theme') || 'defaultTheme',
+);
