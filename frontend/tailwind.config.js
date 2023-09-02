@@ -5,11 +5,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        main: 'var(--color-main)',
-        text: 'var(--color-text)',
-        background: 'var(--color-background)',
-        sub: 'var(--color-sub)',
-        'sub-alt': 'var(--color-sub-alt)',
+        theme: {
+          main: 'var(--color-main)',
+          text: 'var(--color-text)',
+          bg: 'var(--color-bg)',
+          sub: 'var(--color-sub)',
+          'sub-alt': 'var(--color-sub-alt)',
+        },
       },
     },
   },

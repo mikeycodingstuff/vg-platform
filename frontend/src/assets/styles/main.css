@@ -6,7 +6,7 @@
   html[data-theme='botanical'] {
     --color-main: #eaf1f3;
     --color-text: #eaf1f3;
-    --color-background: #7b9c98;
+    --color-bg: #7b9c98;
     --color-sub: #495755;
     --color-sub-alt: #72908d;
   }
@@ -14,7 +14,7 @@
   html[data-theme='rose_pine_dawn'] {
     --color-main: #56949f;
     --color-text: #286983;
-    --color-background: #fffaf3;
+    --color-bg: #fffaf3;
     --color-sub: #c4a7e7;
     --color-sub-alt: #f0e9df;
   }
@@ -22,7 +22,7 @@
   html[data-theme='moonlight'] {
     --color-main: #c69f68;
     --color-text: #ccccb5;
-    --color-background: #191f28;
+    --color-bg: #191f28;
     --color-sub: #4b5975;
     --color-sub-alt: #141a22;
   }

@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1 class="text-2xl text-sub">List of Games</h1>
+    <h1 class="text-2xl text-theme-sub">List of Games</h1>
     <table>
       <thead>
-        <tr class="text-sub">
+        <tr class="text-theme-sub">
           <th>Name</th>
           <th>Release Date</th>
           <th>Developer</th>

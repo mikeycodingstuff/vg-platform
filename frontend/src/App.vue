@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="p-20 bg-background text-text">
+  <div id="app" class="p-20 bg-theme-bg text-theme-text">
     <router-view></router-view>
     <theme-selector></theme-selector>
   </div>
