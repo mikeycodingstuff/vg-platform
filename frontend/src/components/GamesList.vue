@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>List of Games</h1>
+    <h1 class="text-2xl text-theme-sub">List of Games</h1>
     <table>
       <thead>
-        <tr>
+        <tr class="text-theme-sub">
           <th>Name</th>
           <th>Release Date</th>
           <th>Developer</th>
@@ -36,7 +36,7 @@ onMounted(() => {
 const fetchGames = async () => {
   try {
     const response = await fetch(`${BASE_URL}/games`);
-    console.log(`${BASE_URL}/games`)
+    console.log(`${BASE_URL}/games`);
     const data: Game[] = await response.json();
     games.value = data;
     loading.value = false;

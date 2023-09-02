@@ -1,0 +1,22 @@
+@import '../themes/botanical.css';
+@import '../themes/moonlight.css';
+@import '../themes/rose_pine_dawn.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-main: #e2b714;
+  --color-text: #d1d0c5;
+  --color-bg: #323437;
+  --color-sub: #646669;
+  --color-sub-alt: #2c2e31;
+
+  background-color: var(--color-bg);
+}
+
+#app {
+  background-color: var(--color-bg);
+  height: max-content;
+}
