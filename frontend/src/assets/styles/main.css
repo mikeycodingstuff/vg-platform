@@ -18,7 +18,7 @@
     --color-sub: #c4a7e7;
     --color-sub-alt: #f0e9df;
   }
-  
+
   html[data-theme='moonlight'] {
     --color-main: #c69f68;
     --color-text: #ccccb5;
